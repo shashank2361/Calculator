@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator.Test
+namespace Calculator.Test.Service
 {
     [TestFixture]
     public class CompoundInterestServiceTest
@@ -23,17 +23,17 @@ namespace Calculator.Test
         {
             //Arrange
             var model = new CompountInterestModel()
-                            {
-                                PrincipleAmt = 1500,
-                                InterestRate = 4.3,
-                                TimesPerYear = 1,
-                                Years = 6
-                            };
+            {
+                PrincipleAmt = 1500,
+                InterestRate = 4.3,
+                TimesPerYear = 1,
+                Years = 6
+            };
 
             //Act
             double result = await _compoundInterestService.CalculateCompoundIncrease(model);
             //Assert
-            Assert.AreEqual(1931.07,  result );
+            Assert.AreEqual(1931.07, result);
         }
 
         [Test]
@@ -41,12 +41,12 @@ namespace Calculator.Test
         {
             //Arrange
             var model = new CompountInterestModel()
-                            {
-                                PrincipleAmt = 12000,
-                                InterestRate = 4.0,
-                                TimesPerYear = 1,
-                                Years = 5
-                            };
+            {
+                PrincipleAmt = 12000,
+                InterestRate = 4.0,
+                TimesPerYear = 1,
+                Years = 5
+            };
 
             //Act
             double result = await _compoundInterestService.CalculateCompoundDecrease(model);
